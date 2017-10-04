@@ -2,3 +2,54 @@
   margin: 0;
   padding: 0;
 }
+
+nav div#logo {
+  margin: 0;
+  padding: 20px 0;
+  width: 300px;
+  background-color: #F7C26D;
+  border-right: 1px solid #666;
+}
+
+nav div#logo h3 {
+  font-family: sans-serif;
+  margin: 0 15px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  background-color: #F7C26D;
+  height: 100%; /* Full height */
+  position: fixed; /* Make it stick, even on scroll */
+  overflow: auto; /* Enable scrolling if the sidenav has too much content */
+  border-right: 1px solid #666;
+}
+
+nav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+nav li {
+  border-top: 1px solid #666;
+}
+
+nav li:last-child {
+  border-bottom: 1px solid #666;
+}
+
+/* Change the link color on hover */
+nav li a:hover {
+  background-color: #9DD3EB;
+  color: #000;
+}
+
+.active {
+  background-color: #047DD1;
+  color: #FFF;
+}
