@@ -1,4 +1,5 @@
 var gulp = require('gulp')
+var pug = require('gulp-pug')
 var rename = require('gulp-rename')
 var sass = require('gulp-sass')
 var cleanCSS = require('gulp-clean-css')
@@ -17,6 +18,27 @@ gulp.task('browserSync', function() {
 gulp.task('html', function() {
   gulp.src('./src/*.html')
     .pipe(gulp.dest('./dist'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+})
+
+gulp.task('pug', function() {
+  return gulp.src('./src/pug/*.pug')
+    .pipe(pug({
+      pretty: true
+    }))
+    .pipe(gulp.dest('./dist'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+})
+
+gulp.task('scripts', function() {
+  return gulp.src('./src/js/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest('./dist/js'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -44,11 +66,12 @@ gulp.task('images', function() {
 })
 
 gulp.task('watch', ['browserSync', 'build'], function() {
-  gulp.watch('./src/*.html', ['html'])
+  gulp.watch('./src/pug/**/*.pug', ['pug'])
+  gulp.watch('./src/js/**/*.js', ['scripts'])
   gulp.watch(['./src/sass/**/*.scss','./src/css/*.css'], ['css'])
   gulp.watch('./src/img/*', ['images'])
 })
 
-gulp.task('build', ['html', 'css', 'images'])
+gulp.task('build', ['pug', 'css', 'scripts', 'images'])
 
 gulp.task('default', ['watch'])
