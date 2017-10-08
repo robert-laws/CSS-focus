@@ -3,6 +3,23 @@
   padding: 0;
 }
 
+/*************** BEGIN HEADER ************************/
+
+header {
+  padding: 15px;
+  width: 100%;
+  background-color: #F7C26D;
+  border-bottom: 1px solid #666;
+}
+
+/*************** END HEADER **************************/
+
+/*************** BEGIN NAVIGATION ********************/
+
+nav {
+  float: left;
+}
+
 nav div#logo {
   margin: 0;
   padding: 20px 0;
@@ -36,10 +53,6 @@ nav li a {
 }
 
 nav li {
-  border-top: 1px solid #666;
-}
-
-nav li:last-child {
   border-bottom: 1px solid #666;
 }
 
@@ -53,3 +66,32 @@ nav li a:hover {
   background-color: #047DD1;
   color: #FFF;
 }
+
+/*************** END NAVIGATION ********************/
+
+/*************** BEGIN SECTION & CONTENT ***********/
+
+section {
+  margin-left: 300px;
+  padding: 10px;
+}
+
+code {
+  margin: 0 4px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background-color: #EEE;
+}
+
+pre {
+  margin: 10px 5px;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #BBB;
+  background-color: #EEE;
+}
+
+
+
+
+/*************** END SECTION & CONTENT ***********/
