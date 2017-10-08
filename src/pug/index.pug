@@ -12,12 +12,26 @@ html
 
     section
 
-      h1 CSS3 Syntax and Usage
+      h1 CSS3
+
+      h2 Introduction
 
       p 
-        |This website explores many of the features of CSS3 and how they are implemented. Including how to format code samples
-        code var x = 10;
-        | to display how to write code.
+        |This website is an exploration of the features and implementation of CSS3. The website aims to describe in words, code, and implementation many of the most prominent and useful features of CSS3. Much of the content of this website is inspired by the information from 
+        em The Book of CSS3, 2nd Edition
+        |  by Peter Gasston. The book is 
+        a(href="https://www.amazon.com/Book-CSS3-2nd-Developers-Future/dp/1593275803" target="_blank") available for purchase
+        |  at amazon.com.
+
+      h2 Code Examples
+
+      p 
+        |Conventions used to make examples and descriptions on this website include inline code snippets, such as
+        code body { background-color: #F00; }
+        |to display code in the flow of the text.
+
+      p
+        |For more substantial code, the preformatted element is used to display the code as a separate block to make it easier to read. For example:
 
       pre
         span CSS
@@ -25,5 +39,8 @@ html
         |body {
         |   background-color: red;
         |}
+
+      p
+        |All the code including HTML, CSS, and Javascript for this website is coded from scratch without the use of any frameworks. This allow focus on the features of CSS3 without external code getting in the way.
 
     include includes/footer.pug
