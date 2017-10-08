@@ -6,10 +6,39 @@
 /*************** BEGIN HEADER ************************/
 
 header {
-  padding: 15px;
   width: 100%;
   background-color: #F7C26D;
-  border-bottom: 1px solid #666;
+  border-bottom: 5px solid #BBB;
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    padding: 15px;
+  }
+
+  h3 {
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  header {
+    padding: 12px;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    padding: 7px;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
 }
 
 /*************** END HEADER **************************/
@@ -20,24 +49,10 @@ nav {
   float: left;
 }
 
-nav div#logo {
-  margin: 0;
-  padding: 20px 0;
-  width: 300px;
-  background-color: #F7C26D;
-  border-right: 1px solid #666;
-}
-
-nav div#logo h3 {
-  font-family: sans-serif;
-  margin: 0 15px;
-}
-
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 300px;
   background-color: #F7C26D;
   height: 100%; /* Full height */
   position: fixed; /* Make it stick, even on scroll */
@@ -48,12 +63,15 @@ nav ul {
 nav li a {
   display: block;
   color: #000;
-  padding: 8px 16px;
   text-decoration: none;
 }
 
 nav li {
   border-bottom: 1px solid #666;
+}
+
+nav li:last-child {
+  margin-bottom: 100px;
 }
 
 /* Change the link color on hover */
@@ -67,13 +85,46 @@ nav li a:hover {
   color: #FFF;
 }
 
+@media screen and (min-width: 1200px) {
+  nav ul {
+    width: 300px;
+  }
+
+  nav li a {
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  nav ul {
+    width: 200px;
+  }
+
+  nav li a {
+    padding: 6px 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  nav ul {
+    width: 150px;
+  }
+
+  nav li a {
+    padding: 6px 8px;
+  }
+}
+
 /*************** END NAVIGATION ********************/
 
 /*************** BEGIN SECTION & CONTENT ***********/
 
 section {
-  margin-left: 300px;
-  padding: 10px;
+  padding: 12px;
+}
+
+section h1 {
+  margin-bottom: 10px;
 }
 
 code {
@@ -91,7 +142,46 @@ pre {
   background-color: #EEE;
 }
 
+pre span {
+  padding: 2px 20px;
+  position: relative;
+  top: -8px;
+  left: -10px;
+  background-color: #047DD1;
+  border-radius: 7px 0 0 0;
+  font-weight: bold;
+  font-size: 1.15em;
+  color: #FFF;
+}
 
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 1.6em;
+  }
 
+  section {
+    margin-left: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  h1 {
+    font-size: 1.4em;
+  }
+
+  section {
+    margin-left: 200px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.2em;
+  }
+
+  section {
+    margin-left: 150px;
+  }
+}
 
 /*************** END SECTION & CONTENT ***********/
