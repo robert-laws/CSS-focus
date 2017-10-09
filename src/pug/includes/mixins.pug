@@ -3,11 +3,19 @@ mixin headname(main, title)
     |  -  
     = title
 
-mixin formatcode(type, ...args)
+mixin formatCssCode(type, ...args)
   pre
     span= type
     |
-    |
-    each arg in args
-      |#{arg}
-      |
+    - var count = args.length - 1
+    each val, index in args      
+      if index == 0
+        |
+        |#{val}
+      else if index == count
+        |
+        |#{val}
+      else
+        |
+        |   #{val}
+

@@ -25,9 +25,30 @@ html
         |Using media queries is a technique to selectively display content to a user depending on a certain number of criteria that can be defined such as screen minimum and maximum width and screen resolution.
 
       p
-        |Media queries are defined using a syntax that includes some logic used to determine how to apply the style rules.
+        |Media queries are defined using a syntax that includes some logic used to determine how to apply the style rules. The basic structure is the following:
 
-      
+      +formatCssCode("CSS", "@media (feature: value) {", "rules", "}")
 
+      p
+        |Not included in the example above is a logical statement for type of media that should be included in the media query. This could be a value like
+        em  all 
+        | or
+        em  screen 
+        | or
+        em  print
+        |.
+
+      p
+        |For example, if a developer wanted to add styling for devices like a mobile phone, they could create a media query that would style elements specifically for that size of screen.
+
+      +formatCssCode("CSS", "@media screen and (max-width: 480px) {", "h1 { font-size: 1.2em; }", "}")
+
+      p
+        |In this css code, the media query targets screens that have a screen up to the max-width of 480px. If my screen becomes wider than 480px then the rule is no longer applied to the element. Likewise, it's possible to add another feature to the media query.
+
+      +formatCssCode("CSS", "@media screen (min-width: 320px) and (max-width: 480px) {", "h1 { font-size: 1.2em; }", "}")
+
+      p
+        |In this case, the media query targets screens that have a screen width than 320px but only up to a width of 480px. The rule will be applied only to screens that are between 320px and 480px wide.
 
     include includes/footer.pug

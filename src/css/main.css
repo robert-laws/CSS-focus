@@ -115,6 +115,10 @@ nav li a:hover {
   }
 }
 
+@media screen and (min-width: 400px) and (max-width: 480px) {
+  h4 { color: yellow; }
+}
+
 /*************** END NAVIGATION ********************/
 
 /*************** BEGIN SECTION & CONTENT ***********/
