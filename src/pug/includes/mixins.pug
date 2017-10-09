@@ -2,3 +2,12 @@ mixin headname(main, title)
   h3= main
     |  -  
     = title
+
+mixin formatcode(type, ...args)
+  pre
+    span= type
+    |
+    |
+    each arg in args
+      |#{arg}
+      |

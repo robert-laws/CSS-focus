@@ -31,7 +31,9 @@ html
         |to display code in the flow of the text.
 
       p
-        |For more substantial code, the preformatted element is used to display the code as a separate block to make it easier to read. For example:
+        |For more substantial code, extending over multiple lines, the preformatted element
+        code pre
+        | is used to display the code as a separate block to make it easier to read. For example:
 
       pre
         span CSS
@@ -40,7 +42,14 @@ html
         |   background-color: red;
         |}
 
+      +formatcode("CSS", "body {", "background-color: red", "}")
+
       p
         |All the code including HTML, CSS, and Javascript for this website is coded from scratch without the use of any frameworks. This allow focus on the features of CSS3 without external code getting in the way.
+
+      h2 Website Concept
+
+      p
+        |...
 
     include includes/footer.pug
