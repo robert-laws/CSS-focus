@@ -10,7 +10,7 @@ html
 
     include includes/navigation.pug
 
-    section
+    section.main
 
       h1 Media Queries and Different Screens
 
@@ -20,6 +20,8 @@ html
         |The concept of mobile-first web development has to do with beginning the development process with the mobile screen in mind and then moving onto development for larger screens. The reasoning behind this was that developer had been developing for larger screens for which loading network-demanding resources like images and large stylesheets would consume a lot of data, but then be hidden from the mobile display. Using media queries will prevent high-cost asset loading for mobile users.
 
       h2 In Practice
+
+      h4 Media Queries for Screen Width
 
       p
         |Using media queries is a technique to selectively display content to a user depending on a certain number of criteria that can be defined such as screen minimum and maximum width and screen resolution.
@@ -50,5 +52,14 @@ html
 
       p
         |In this case, the media query targets screens that have a screen width than 320px but only up to a width of 480px. The rule will be applied only to screens that are between 320px and 480px wide.
+
+      h4 Media Queries for Resolution
+
+      p
+        |Many devices made within the last few years have much higher quality screens that were available before. They're able to increase the pixel density and therefore display higher resolution images better than older screens. The impact this has is that images that are not optimized for the higher resolution screens may not look very good on newer screens.
+
+        |The difficulty in developing media queries for high resolution screens is the different implmentations across different browsers. use 
+
+      +formatCssCode("CSS", "@media only screen and (min-resolution: 200dpi) {", ".logo { background: url(logo@2x.png) no-repeat 0 0; }", "}")
 
     include includes/footer.pug

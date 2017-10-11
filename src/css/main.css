@@ -9,6 +9,8 @@ header {
   width: 100%;
   background-color: #F7C26D;
   border-bottom: 5px solid #BBB;
+  position: fixed;
+  z-index: 1000;
 }
 
 @media screen and (min-width: 1200px) {
@@ -86,6 +88,10 @@ nav li a:hover {
 }
 
 @media screen and (min-width: 1200px) {
+  nav {
+    margin-top: 68px;
+  }
+
   nav ul {
     width: 300px;
   }
@@ -96,6 +102,10 @@ nav li a:hover {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
+  nav {
+    margin-top: 56px;
+  }
+  
   nav ul {
     width: 200px;
   }
@@ -106,6 +116,10 @@ nav li a:hover {
 }
 
 @media screen and (max-width: 767px) {
+  nav {
+    margin-top: 41px;
+  }
+  
   nav ul {
     width: 150px;
   }
@@ -123,7 +137,9 @@ nav li a:hover {
 
 /*************** BEGIN SECTION & CONTENT ***********/
 
-section {
+section.main {
+  position: relative;
+  overflow: hidden;
   padding: 12px;
 }
 
@@ -133,7 +149,11 @@ section h1 {
 
 section h2 {
   margin-top: 24px;
-  margin-bottom: -4px;
+  margin-bottom: -2px;
+}
+
+section h4 {
+  margin-top:18px;
 }
 
 section p {
@@ -168,6 +188,10 @@ pre span {
 }
 
 @media screen and (min-width: 1200px) {
+  section.main {
+    top: 68px;
+  }
+
   h1 {
     font-size: 1.6em;
   }
@@ -182,6 +206,10 @@ pre span {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
+  section.main {
+    top: 56px;
+  }
+  
   h1 {
     font-size: 1.4em;
   }
@@ -196,6 +224,10 @@ pre span {
 }
 
 @media screen and (max-width: 767px) {
+  section.main {
+    top: 41px;
+  }
+
   h1 {
     font-size: 1.2em;
   }
