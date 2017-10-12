@@ -5,3 +5,10 @@ body {
     }
   }  
 }
+
+section.main article {
+  background-color: lighten(#CCC, 18%);
+  border-width: 1px;
+  border-style: solid;
+  border-color: lighten(#CCC, 9%);
+}
