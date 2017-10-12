@@ -143,6 +143,10 @@ section.main {
   padding: 12px;
 }
 
+section.main hr {
+  margin-top: 30px;
+}
+
 section.main article {
   margin: 15px;
   padding: 15px;
@@ -153,7 +157,8 @@ section.main article h5 {
 }
 
 section.main article img {
-  width: 75px
+  width: 75px;
+  margin: 0 15px;
 }
 
 section h1 {
@@ -255,12 +260,3 @@ pre span {
 }
 
 /*************** END SECTION & CONTENT ***********/
-
-/*************** ATTRIBUTE SELECTORS *************/
-
-[alt] {
-  border: 1px dashed #000;
-}
-
-
-/************** END ATTRIBUTE SELECTORS **********/

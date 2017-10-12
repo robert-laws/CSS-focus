@@ -14,27 +14,81 @@ html
 
       h1 Using Selectors
 
-      h2 DOM Selectors
+      h2 Attribute Selectors
 
       p
-        |CSS3 builds on the selectors available from CSS1 and CSS2. In CSS3 there are selectors that target class, type, and attributes when making selections.
-
-      h4 Attribute Selectors
+        |CSS3 builds on the selectors available from CSS1 and CSS2. In CSS3 there are selectors that target class, type, and attributes when making selections. CSS3 adds 3 additional attribute selectors. These build on the attribute selectors from CSS level 2. They are the beginning, ending, and arbitrary attribute selectors.
 
       p
-        |CSS3 adds 3 additional attribute selectors. These build on the attribute selectors from CSS level 2.
-
-      h4 Attribute Selectors
-
-      p
-        |Some images will be used to demonstrate how attribute selectors work
+        |Here are some images will be used to demonstrate how attribute selectors work
 
       article
 
         h5 Example Images
 
-        img(alt='square shape' title='square shape' src='img/square.png')
+        img(alt='square' title='green image of a square' src='img/square.png')
+
+        img(alt='triangle' title='red image of a triangle' src='img/triangle.png')
+
+        img(alt='circle' title='orange image of a circle' src='img/circle.png')
+
+        img(alt='line' title='blue image of a line' src='img/line.png')
+
+      h4 Example HTML Code
+
+      +formatHtmlCodeComplex("HTML", false, "<img src='img/square.png' alt='square' title='image of a square'>", "<img src='img/triangle.png' alt='triangle' title='image of a triangle'>", "<img src='img/circle.png' alt='circle' title='image of a circle'>", "<img src='img/line.png' alt='line' title='image of a line'>")
+
+      h4 Simple Attribute Selector
 
       +formatCssCode("CSS", "[alt] {", "border: 1px dashed #000;", "}")
+
+      h4 Exact Attribute Value Selector
+
+      +formatCssCode("CSS", "[alt='triangle'] {", "border: 2px solid #F00;", "}")
+
+      h4 Partial Attribute Value Selector
+
+      +formatCssCode("CSS", "[title~='blue'] {", "border: 3px dotted #F00;", "}")
+
+      h4 Beginning Substring Atrribute Value Selector
+
+      +formatCssCode("CSS", "[title^='orange'] {", "border: 4px solid darkorange;", "}")
+
+      h4 Ending Substring Atrribute Value Selector
+
+      +formatCssCode("CSS", "[src$='png'] {", "border-top: 5px solid green;", "}")
+
+      h4 Arbitrary Atrribute Value Selector
+
+      +formatCssCode("CSS", "[title*='image'] {", "border-bottom: 10px double yellowgreen;", "}")
+
+      hr
+
+      h2 General Sibling Combinator
+
+      p
+        |Building on the concept of the adjacent sibling combinator, the general sibling combinator is new in CSS3.
+
+      article
+
+        h4.comb_heading Heading Number 4
+
+        p.comb_text_one
+          |Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+        p.comb_text_two
+          |Pariatur voluptatibus aperiam dolorum debitis similique ipsum quasi, pariatur voluptatibus.
+        
+      h4 Example HTML Code
+
+      +formatHtmlCodeComplex("HTML", true, "<article>", "<h4 class='comb_heading'>Heading Number 4</h4>", "<p class='comb_text_one'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>", "<p class='comb_text_two'>Pariatur voluptatibus aperiam dolorum debitis similique ipsum quasi, pariatur voluptatibus.</p>", "</article>")
+
+      h4 Adjacent Sibling Combinator
+
+      +formatCssCode("CSS", "h4 + p {", "font-style: italic;", "}")
+
+      h4 General Sibling Combinator
+
+      +formatCssCode("CSS", "h4 ~ p {", "color: blue;", "}")
 
     include includes/footer.pug
