@@ -10,7 +10,111 @@ html
 
     include includes/navigation.pug
 
+    section.main
 
+      h1 Pseudo-Classes and Pseudo-Elements
 
+      h2 Foundation Concepts - CSS2
+
+      p
+        |Pseudo-classes provide access to an element's state. Illustrated best with links and the
+        code :hover :visited :active
+        |states.
+
+      p
+        |Pseudo-elements, on the other hand, provide access to an elements sub-parts, which can include portions of text nodes, for example with
+        code ::first-line ::first-letter
+        |.
+
+      p
+        |The major advantage of pseudo-classes and pseudo-elements is that they provide ways to hook-up styles without having to add classes without clear symantic value to the markup. Also, if changes are made such as adding more elements to the HTML, additional class names don't need to be added in order for the styling to take effect as desired. The first type considered is 
+        a(href="#example") CSS3 Structural Pseudo-Classes
+        |  after that is more.
+
+      h2.example#example CSS3 Structural Pseudo-Classes and Pseudo-Elements
+
+      article
+
+        h5 Example Content
+
+        div
+          p 1 - Lorem ipsum dolor sit amet.
+          p 
+            |2 - Laudantium minima
+            span doloremque eligendi
+            |  aliquam omnis et culpa.
+          p 3 - Dolorum eveniet debitis assumenda! 
+          p 4 - Aut perferendis aliquam ut iusto doloremque.
+          p 5 - Commodi at vel dolores recusandae autem.
+          p 6 - Minus odio quas consequuntur nobis autem.
+          p
+
+      h4 Example HTML Code
+
+      +formatHtmlCodeComplex("HTML", true, "<div>", "<p>1 - Lorem ipsum dolor sit amet.</p>", "<p>2 - Laudantium minima <span>doloremque eligendi</span> aliquam omnis et culpa.</p>", "<p>3 - Dolorum eveniet debitis assumenda!</p>", "<p>4 - Aut perferendis aliquam ut iusto doloremque.</p>", "<p>5 - Commodi at vel dolores recusandae autem.</p>", "<p>6 - Minus odio quas consequuntur nobis autem.</p>", "<p></p>", "</div>")
+
+      h4 :First-Child - Pseudo-class (CSS2)
+
+      +formatCssCode("CSS", "div p:first-child {", "color: red;", "}")
+
+      h4 :nth-*(n) Pseudo-class (CSS3)
+
+      +formatCssCode("CSS", "div p:nth-child(2n + 1) {", "font-style: italic", "}")
+
+      h4 :nth-child(even)
+
+      +formatCssCode("CSS", "div p:nth-child(even) {", "font-size: 1.5em", "}")
+
+      h4 :nth-of-type(n)
+
+      +formatCssCode("CSS", "div p:nth-of-type(3n) {", "background-color: yellow;", "}")
+
+      h4 :nth-of-last-child(n)
+
+      +formatCssCode("CSS", "div p:nth-last-child(-n + 2) {", "color: green;", "}")
+
+      h4 :first-child
+
+      +formatCssCode("CSS", "div:first-child {", "text-decoration: underline;", "}")
+
+      h4 :last-child
+
+      +formatCssCode("CSS", "div:last-child {", "padding-left: 20px;", "}")
+
+      h4 :first-of-type
+
+      +formatCssCode("CSS", "div p:first-of-type {", "border: 1px solid #AAA;", "}")
+
+      h4 :last-of-type
+
+      +formatCssCode("CSS", "div p:last-of-type {", "border: 1px solid #F00;", "}")
+
+      h4 :only-child AND :only-type
+
+      +formatCssCode("CSS", "div span:only-of-type {", "color: blue;", "}")
+
+      h4 :target
+
+      +formatCssCode("CSS", ".example:target {", "color: green;", "}")
+
+      h4 :empty
+
+      +formatCssCode("CSS", "p:empty {", "background-color: #F09;", "}")
+
+      h4 :not
+
+      +formatCssCode("CSS", "div:not(p) {", "background-color: crimson;", "}")
+
+      h4 ::first-letter AND ::first-line
+
+      +formatCssCode("CSS", "div p::first-letter {", "font-size: 2em;", "}")
+
+      h4 ::selection
+
+      +formatCssCode("CSS", "div p::selection {", "background-color: #1A1;", "color: #FFF;", "}")
+
+      h4 ::after AND ::before
+
+      +formatCssCode("CSS", "div p::after {", "content: content: ' →';", "}")
 
     include includes/footer.pug

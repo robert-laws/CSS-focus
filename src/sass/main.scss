@@ -49,7 +49,86 @@ section.main {
     h4 ~ p {
       color: crimson;
     }
+
+    p:nth-last-child(-n + 1) {
+      color: green;
+    }
+
+    p::first-letter {
+      font-size: 1.8em;
+    }
+
+    p::selection {
+      background-color: #1A1;
+      color: #FFF;
+    }
+
+    p::after {
+      content: ' →';
+    }
   }
 }
-
 /************** END ATTRIBUTE SELECTORS **********/
+
+/************** BEGIN PSEUDO-CLASSES/ELEMENTS ****/
+.example:target {
+  color: green;
+}
+
+section.main {
+  div {
+
+    :not(p) {
+      background-color: crimson;
+    }
+
+    :first-child {
+      text-decoration: underline;
+    }
+
+    :last-child {
+      padding-left: 20px;
+    }
+
+    p {
+      height: 1.2em;
+    }
+
+    p:empty {
+      background-color: #F09;
+    }
+
+    p:first-child {
+      color: red;
+    }
+
+    p:nth-child(2n + 1) {
+      font-style: italic;
+    }
+
+    p:nth-last-child(-n + 2) {
+      color: green;
+    }
+
+    p:nth-child(even) {
+      font-size: 1.5em
+    }
+
+    p:nth-of-type(3n) {
+      background-color: yellow;
+    }
+
+    p:first-of-type {
+      border: 1px solid #AAA;
+    }
+
+    p:last-of-type {
+      border: 1px solid #F00;
+    }
+
+    span:only-of-type {
+      color: blue;
+    }
+  }
+}
+/************** END PSEUDO-CLASSES/ELEMENTS ******/
