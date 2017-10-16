@@ -19,7 +19,7 @@ header {
   }
 
   h3 {
-    font-size: 1.8em;
+    font-size: 2em;
   }
 }
 
@@ -29,7 +29,7 @@ header {
   }
 
   h3 {
-    font-size: 1.5em;
+    font-size: 1.6em;
   }
 }
 
@@ -39,7 +39,7 @@ header {
   }
 
   h3 {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 }
 
@@ -70,6 +70,7 @@ nav li a {
 
 nav li {
   border-bottom: 1px solid #666;
+  font-size: 0.9em;
 }
 
 nav li:last-child {
@@ -149,7 +150,8 @@ section.main hr {
 
 section.main article {
   margin: 15px;
-  padding: 15px;
+  padding: 15px 0;
+  border-radius: 5px;
 }
 
 section.main article h5 {
@@ -159,6 +161,22 @@ section.main article h5 {
 section.main article img {
   width: 75px;
   margin: 0 15px;
+}
+
+article h3, article h4, article p {
+  margin-left: 15px !important;
+}
+
+article h5 {
+  padding: 2px 12px;
+  position: relative;
+  top: -15px;
+  left: 0px;
+  background-color: #047DD1;
+  border-radius: 5px 5px 0 0;
+  font-weight: bold;
+  font-size: 1.15em;
+  color: #FFF;
 }
 
 section h1 {

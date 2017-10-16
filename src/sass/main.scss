@@ -1,9 +1,49 @@
+@font-face {
+  font-family: ChunkFive;
+  src: url('../fonts/Chunkfive-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: RalewayThin;
+  src: url('../fonts/raleway_thin-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url('../fonts/OpenSans-Regular.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: italic;
+  src: url('../fonts/OpenSans-Italic.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-weight: bold;
+  src: url('../fonts/OpenSans-Bold.ttf') format('ttf'),
+}
+
 body {
   section {
     h1, h2, h3, h4 {
       color: #333;
     }
   }  
+}
+
+header {
+  h3 {
+    font-family: ChunkFive, sans-serif;
+  }
+}
+
+nav {
+  li {
+    font-family: OpenSans, sans-serif;
+    font-weight: normal;
+  }
 }
 
 /*************** ATTRIBUTE SELECTORS *************/
@@ -37,7 +77,9 @@ section.main {
     border-width: 1px;
     border-style: solid;
     border-color: lighten(#CCC, 9%);
-  
+  }
+
+  article.sibling {
     h4 {
       margin-top: 4px;
     }
@@ -76,7 +118,7 @@ section.main {
 }
 
 section.main {
-  div {
+  div.pseudo {
 
     :not(p) {
       background-color: crimson;
@@ -132,3 +174,18 @@ section.main {
   }
 }
 /************** END PSEUDO-CLASSES/ELEMENTS ******/
+
+/************** BEGIN WEB FONTS ******************/
+
+article.fonts {
+  h3.webfont { 
+    font-family: ChunkFive, sans-serif; 
+  }
+
+  p {
+    font-family: RalewayThin, sans-serif;
+  }
+}
+
+
+/************** END WEB FONTS ********************/

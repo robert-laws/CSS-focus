@@ -10,7 +10,41 @@ html
 
     include includes/navigation.pug
 
+    section.main
 
+      h1 Web Fonts
 
+      h2 @font-face Rule
+
+      p
+        |Web fonts adds great flexibility to developers to use more than just system fonts when developing a design for their website. Used with the CSS3 @font-face rule, it's possible to add local or web-based fonts for use on a webpage.
+
+      article.fonts
+
+        h5 Example Text
+
+        h3.webfont Web-Fonts in Action
+
+        h4.subtitle Subtitle Information - no font style added
+
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, repudiandae.
+
+        p Tempora nesciunt. Enim, est quod velit vel ratione iste provident? Vel!
+
+      h4 Example HTML Code
+
+      +formatHtmlCodeComplex("HTML", false, "<h3>Web-Fonts in Action</h3>", "<h4>Subtitle Information - no font style added</h4>", "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, repudiandae.</p>", "<p>Tempora nesciunt. Enim, est quod velit vel ratione iste provident? Vel!</p>")
+
+      h4 @font-face style declaration in stylesheet
+
+      +formatCssCode("CSS", "@font-face {", "font-family: ChunkFive;", "src: url('../fonts/Chunkfive-webfont.woff') format('woff');", "}")
+
+      +formatCssCode("CSS", "@font-face {", "font-family: RalewayThin;", "src: url('../fonts/raleway_thin-webfont.woff') format('woff');", "}")
+
+      h4 Application of @font-face
+
+      +formatCssCode("CSS", "h3.webfont {", "font-family: ChunkFive, sans-serif", "}")
+
+      +formatCssCode("CSS", "p {", "font-family: RalewayThin, sans-serif;", "}")
 
     include includes/footer.pug

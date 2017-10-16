@@ -34,6 +34,11 @@ gulp.task('pug', function() {
     }))
 })
 
+gulp.task('fonts', function() {
+  return gulp.src('./src/fonts/*')
+    .pipe(gulp.dest('./dist/fonts'))
+})
+
 gulp.task('scripts', function() {
   return gulp.src('./src/js/*.js')
     .pipe(sourcemaps.init())
@@ -70,8 +75,9 @@ gulp.task('watch', ['browserSync', 'build'], function() {
   gulp.watch('./src/js/**/*.js', ['scripts'])
   gulp.watch(['./src/sass/**/*.scss','./src/css/*.css'], ['css'])
   gulp.watch('./src/img/*', ['images'])
+  gulp.watch('./src/fonts/*', ['fonts'])
 })
 
-gulp.task('build', ['pug', 'css', 'scripts', 'images'])
+gulp.task('build', ['pug', 'css', 'scripts', 'images', 'fonts'])
 
 gulp.task('default', ['watch'])
