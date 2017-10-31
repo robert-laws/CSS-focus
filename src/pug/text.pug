@@ -10,7 +10,74 @@ html
 
     include includes/navigation.pug
 
+    section.main
 
+      h1 Text Effects and Typographic Styles
 
+      h2 Applying Dimensional Effects: text-shadow
+
+      p
+        |The text-shadow property will apply a shadow effect to text, giving the user a sense of 3 dimensionality.
+
+      h3 Text-Shadow Property
+
+      +formatCssCode("CSS", "element {", "text-shadow: x y blur-radius color", "}")
+
+      h4 Examples
+
+      article
+
+        h5 Example Content
+
+        div.text_effects
+          p First Sample Text
+          p.second Sample Text
+          p.third Sample Text
+        
+      p
+        |Most basic application of the text-shadow property
+
+      +formatCssCode("CSS", "p {", "text-shadow: -3px -3px;", "}")
+
+      p
+        |Addition of color value
+
+      +formatCssCode("CSS", "p {", "text-shadow: -3px -3px #CCC;", "}")          
+
+      p
+        |Addition of blur-radius value
+
+      +formatCssCode("CSS", "p {", "text-shadow: -3px -3px 3px #CCC;", "}")
+
+      h3 Text-Overflow Property
+      +formatCssCode("CSS", "element {", "text-overflow: keyword;", "}")
+      h4 Examples
+      article
+        h5 Example Content
+        div.overflow
+          p 
+            |Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus nam consequuntur voluptatum placeat modi. Nobis magni minima vel consequatur veniam culpa eligendi eos nulla incidunt voluptates esse facere quo molestiae, corrupti enim. Architecto ducimus ratione pariatur quaerat nobis? Facere, dignissimos nihil. Dignissimos similique velit hic blanditiis sunt pariatur dolores vel nulla id beatae dolor exercitationem, atque modi quidem. Itaque veritatis architecto quisquam vero ratione libero corporis, adipisci facilis nemo officia perspiciatis. Quo possimus deleniti libero!
+      p
+        |Application of the text-overflow property
+      +formatCssCode("CSS", "p {", "overflow: hidden;", "text-overflow: ellipsis;", "white-space: nowrap;", "}")
+
+      h3 Controlling Line Wrapping
+      +formatCssCode("CSS", "element {", "word-wrap: keyword", "}")
+      h4 Examples
+      article
+        h5 Example Content
+        div.no-wrapping
+          p
+            |Lorem ipsum dolor sit amet consectetur adipisica elit. Volupa esse facere quo blandiveritatisolutalorporiuptatibus.
+
+        div.wrapping
+          p.words
+            |Lorem ipsum dolor sit amet consectetur adipisica elit. Volupa esse facere quo blandiveritatisolutalorporiuptatibus.
+      p
+        |Use word-wrap to break if the text would extend beyond the containing element. The accepted values are 
+        strong normal 
+        |or 
+        strong break-word
+      +formatCssCode("CSS", "p {", "word-wrap: break-word;", "}")
 
     include includes/footer.pug

@@ -18,8 +18,8 @@ header {
     padding: 15px;
   }
 
-  h3 {
-    font-size: 2em;
+  header h3 {
+    font-size: 2em !important;
   }
 }
 
@@ -163,20 +163,25 @@ section.main article img {
   margin: 0 15px;
 }
 
+article {
+  overflow: auto;
+}
+
 article h3, article h4, article p {
   margin-left: 15px !important;
 }
 
 article h5 {
-  padding: 2px 12px;
+  padding: 4px 12px;
   position: relative;
   top: -15px;
   left: 0px;
   background-color: #047DD1;
   border-radius: 5px 5px 0 0;
   font-weight: bold;
-  font-size: 1.15em;
+  font-size: 0.9em;
   color: #FFF;
+  font-family: sans-serif;
 }
 
 section h1 {
@@ -235,6 +240,10 @@ pre span {
   h2 {
     font-size: 1.2em;
   }
+ 
+  h3 {
+    font-size: 1.1em;
+  }
 
   section {
     margin-left: 300px;
@@ -254,6 +263,10 @@ pre span {
     font-size: 1.1em;
   }
 
+  h3 {
+    font-size: 1em;
+  }
+
   section {
     margin-left: 200px;
   }
@@ -269,6 +282,10 @@ pre span {
   }
 
   h2 {
+    font-size: 1em;
+  }
+
+  h3 {
     font-size: 1em;
   }
 

@@ -189,3 +189,54 @@ article.fonts {
 
 
 /************** END WEB FONTS ********************/
+
+/************** BEGIN TEXT EFFECTS ***************/
+
+section.main {
+  div.text_effects {
+    p {
+      font-family: Arial, Helvetica, sans-serif, sans-serif;
+      font-weight: bold;
+      font-size: 2em;
+
+      &:first-child {       
+        text-shadow: -3px -3px;
+      }
+
+      &.second {
+        text-shadow: -3px -3px #CCC;
+      }
+
+      &.third {
+        text-shadow: -3px -3px 3px #CCC;
+      }
+    }
+  }
+
+  div.overflow {
+    margin: 0 20px;
+    width: 500px;
+    height: 36px;
+    border: 1px solid #555;
+
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  div.no-wrapping, div.wrapping {
+    margin: 0 40px;
+    width: 200px;
+    height: 112px;
+    border: 1px solid #555;
+    float: left;
+
+    p.words {
+      word-wrap: break-word;
+    }
+  }
+}
+
+/************** END TEXT EFFECTS *****************/
