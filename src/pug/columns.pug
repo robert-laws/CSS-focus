@@ -1,5 +1,5 @@
 html
-  -var selected = 'Basic Layout';
+  -var selected = 'Text Effects';
 
   head
     include includes/head.pug
@@ -34,8 +34,7 @@ html
       p Application of a multi-column layout with the column-count property
       +formatCssCode("CSS", "p {", "column-count: 2", "}")
 
-      hr
-      h3 Example - Column Width
+      h3 Column Width
       +formatCssCode("CSS", "element {", "column-width: length;", "}")
       h4 Examples
       article
@@ -43,27 +42,9 @@ html
         div.column-width
           p.column-width-200
             |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam? Consequuntur officia eaque quidem nemo excepturi, magnam nobis rem sequi quas nostrum possimus sunt labore in veniam ipsum corporis architecto culpa ullam nisi dolore itaque aliquid molestias? Perspiciatis, totam! Iure, quis consequuntur distinctio hic ut incidunt vel repellendus obcaecati ea illum quasi, ab commodi, quidem laudantium harum quaerat ex veritatis totam nam. Reprehenderit, a sint natus accusamus modi nemo laborum ad ratione delectus! Quaerat, commodi, enim voluptatum ipsa accusantium ab quo excepturi error praesentium soluta animi consectetur cumque nobis sequi temporibus autem itaque vel velit molestiae aliquam illo? Suscipit, eum.
-      +formatCssCode("CSS", "p {", "column-width: 200px;", "}")
-
-      hr
-      h3 Example - Column Width & Width
-      article
-        h5 Sample Content
-        div.column-width
           p.column-width-300
-            |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam? Consequuntur officia eaque quidem nemo excepturi, magnam nobis rem sequi quas nostrum possimus sunt labore in veniam ipsum corporis architecto culpa ullam nisi dolore itaque aliquid molestias? Perspiciatis, totam! Iure, quis consequuntur distinctio hic ut incidunt vel repellendus obcaecati ea illum quasi, ab commodi, quidem laudantium harum quaerat ex veritatis totam nam. Reprehenderit, a sint natus accusamus modi nemo laborum ad ratione delectus! Quaerat, commodi, enim voluptatum ipsa accusantium ab quo excepturi error praesentium soluta animi consectetur cumque nobis sequi temporibus autem itaque vel velit molestiae aliquam illo? Suscipit, eum.
-      +formatCssCode("CSS", "p {", "column-width: 200px;", "width: 820px", "}")
-
-      hr
-      h3 Example - Combining Column Width & Column Count
-      article
-        h5 Sample Content
-        div.column-columns
-          p.column-width-400
-            |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam? Consequuntur officia eaque quidem nemo excepturi, magnam nobis rem sequi quas nostrum possimus sunt labore in veniam ipsum corporis architecto culpa ullam nisi dolore itaque aliquid molestias? Perspiciatis, totam! Iure, quis consequuntur distinctio hic ut incidunt vel repellendus obcaecati ea illum quasi, ab commodi, quidem laudantium harum quaerat ex veritatis totam nam. Reprehenderit, a sint natus accusamus modi nemo laborum ad ratione delectus! Quaerat, commodi, enim voluptatum ipsa accusantium ab quo excepturi error praesentium soluta animi consectetur cumque nobis sequi temporibus autem itaque vel velit molestiae aliquam illo? Suscipit, eum.
-      +formatCssCode("CSS", "p {", "columns: 100px 6;", "}")
-
-      +codeExampleBlock("Example - Column Gaps", "column-gap", "column-gap-2", "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde illum eaque sint exercitationem perspiciatis iusto ducimus omnis provident ab odit est sequi magnam illo repellendus cumque, neque maiores quod autem repellat laborum blanditiis, ratione quo! Numquam aliquam quisquam iusto praesentium!")
-      +formatCssCode("CSS", "p {", "column-gap: 2em;", "}")
+            |Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima ex a sint eveniet nemo dolores aspernatur veniam magni, qui asperiores, sed delectus temporibus dolorem! Suscipit architecto commodi illo cum placeat id praesentium fugit distinctio non earum atque eligendi excepturi voluptatum aliquid, nam ipsam odit, unde laudantium doloremque quisquam adipisci sapiente! Sit, necessitatibus mollitia. Magnam earum accusantium ea aliquid obcaecati! Officia, culpa reiciendis delectus iure, non voluptates, porro repudiandae alias dolor rerum facere! A, blanditiis dignissimos necessitatibus quibusdam totam magnam! Debitis neque adipisci ab ipsa mollitia. Exercitationem aliquam autem provident omnis labore qui sequi dolorum, veniam vitae atque quaerat magnam nisi?
+      p Application of a multi-column layout with the column-width property
+      +formatCssCode("CSS", "p {", "column-width: 200px;", "}")
       
     include includes/footer.pug

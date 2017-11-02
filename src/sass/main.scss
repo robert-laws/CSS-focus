@@ -240,3 +240,50 @@ section.main {
 }
 
 /************** END TEXT EFFECTS *****************/
+
+/************** BEGIN TEXT EFFECTS ***************/
+
+section.main {
+  div.column-count {
+    p[class*='-2'] {
+      column-count: 2;
+    }
+
+    p[class*='-3'] {
+      column-count: 3;
+    }
+
+    p[class*='-4'] {
+      column-count: 4;
+    }
+  }
+
+  div.column-width {
+    p[class*='-200'] {
+      column-width: 200px;
+      // width: 420px;
+    }
+
+    p[class*='-300'] {
+      column-width: 200px;
+      width: 820px;
+    }
+  }
+
+  div.column-columns {
+    p[class*='-400'] {
+      columns: 100px 6;
+    }
+  }
+
+  div.column-gap {
+    p.column-gap-2 {
+      column-count: 3;
+      column-gap: 2em;
+    }
+  }
+}
+
+
+
+/************** END TEXT EFFECTS *****************/

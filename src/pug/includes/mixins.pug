@@ -43,3 +43,12 @@ mixin formatHtmlCodeSimple(type, code)
     span= type
     |
     |#{code}
+
+mixin codeExampleBlock(title, divClass, pClass, text)
+  hr
+  h3= title
+  article
+    h5 Sample Content
+    div(class=divClass)
+      p(class=pClass)
+        |#{text}
