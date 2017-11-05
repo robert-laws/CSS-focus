@@ -44,11 +44,29 @@ mixin formatHtmlCodeSimple(type, code)
     |
     |#{code}
 
-mixin codeExampleBlock(title, divClass, pClass, text)
+mixin codeExampleBlock(title, divClass, pClass, ...args)
   hr
   h3= title
   article
     h5 Sample Content
     div(class=divClass)
-      p(class=pClass)
-        |#{text}
+      each val in args
+        p(class=pClass)
+          |#{val}
+
+mixin exampleBlock(title, divClass, pClass, ...args)
+  hr
+  h3= title
+  article
+    h5 Sample Content
+    div(class=divClass)
+      each val in args
+        if val.selector == "image"
+          #{val.el}(class="image" src=val.text)
+        else
+          #{val.el}(class=val.selector)
+            |#{val.text}
+
+mixin elementBlock(...args)
+  each val in args
+    #{val.el}(class=val.selector)= val.text

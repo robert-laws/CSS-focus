@@ -10,7 +10,20 @@ html
 
     include includes/navigation.pug
 
+    section.main
+      h1 Border & Box-Effects
 
+      h2 Property - Drop Shadows
+
+      +formatCssCode("CSS", "p {", "box-shadow: inset horizontal vertical blur-radius spread color;", "}")
+
+      p
+        |A drop shadow can be applied to an element on the page.
+
+      h3 Box-Shadow on an HTML Element
+
+      +exampleBlock("Example - Background-Repeat", "drop-shadow", "drop-shadow-1", {el: "p", selector: "pDrop", text: ""}, {el: "p", selector: "pDrop2", text: ""}, {el: "p", selector: "pDrop3", text: ""})
+      +formatCssCode("CSS", "p {", "box-shadow: 12px 12px 2px -6px;", "}")
 
 
     include includes/footer.pug
