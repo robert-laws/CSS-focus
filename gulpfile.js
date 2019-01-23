@@ -11,24 +11,24 @@ var browserSync = require("browser-sync").create();
 var paths = {
   styles: {
     src: "src/sass/**/*.scss",
-    dest: "docs/styles"
+    dest: "dist/styles"
   },
   pug: {
     src: "src/pug/*.pug",
     watch: "src/pug/**/*.pug",
-    dest: "docs"
+    dest: "dist"
   },
   scripts: {
     src: "src/js/**/*.js",
-    dest: "docs/scripts"
+    dest: "dist/scripts"
   },
   images: {
     src: ["src/img/**/*.jpg", "src/img/**/*.JPG", "src/img/**/*.png", "src/img/**/*.ico", "src/img/**/*.json"],
-    dest: "docs/images"
+    dest: "dist/images"
   },
   fonts: {
     src: "src/fonts/**/*",
-    dest: "docs/fonts"
+    dest: "dist/fonts"
   }
 }
 
@@ -41,7 +41,7 @@ var prefixerOptions = {
 };
 
 gulp.task('clean', function() {
-  return del(['docs']);
+  return del(['dist']);
 });
 
 gulp.task('pug', function() {
@@ -84,7 +84,7 @@ gulp.task('fonts', function() {
 gulp.task('browser', function() {
   browserSync.init({
     server: {
-      baseDir: "./docs"
+      baseDir: "./dist"
     }
   });
 
