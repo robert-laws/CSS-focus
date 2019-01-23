@@ -104,6 +104,14 @@ gulp.task('browser', function() {
     .on('change', browserSync.reload);
 });
 
+gulp.task('build', gulp.series('clean',
+  gulp.parallel(
+    'pug',
+    'fonts',
+    'styles',
+    'scripts',
+    'images')));
+
 gulp.task('serve', gulp.series('clean',
   gulp.parallel(
     'pug',
