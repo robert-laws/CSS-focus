@@ -1,34 +1,35 @@
 {
   "name": "css-focus",
   "version": "1.0.0",
-  "description": "Focus on CSS",
-  "main": "index.js",
+  "description": "CSS",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "default": "gulp default"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/robert-laws/CSS-focus.git"
   },
   "keywords": [
-    "CSS",
-    "CSS3",
-    "Sass"
+    "css"
   ],
   "author": "Robert Laws",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/robert-laws/CSS-focus/issues"
   },
-  "homepage": "https://github.com/robert-laws/CSS-focus#readme",
-  "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-pug": "^3.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1"
-  }
+  "homepage": "https://github.com/robert-laws/CSS-focus#readme"
 }

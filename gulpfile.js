@@ -1,83 +1,116 @@
-var gulp = require('gulp')
-var pug = require('gulp-pug')
-var rename = require('gulp-rename')
-var sass = require('gulp-sass')
+var gulp = require("gulp");
+var pug = require("gulp-pug");
+var sass = require("gulp-sass");
 var cleanCSS = require('gulp-clean-css')
 var concat = require('gulp-concat')
-var sourcemaps = require('gulp-sourcemaps')
-var browserSync = require('browser-sync').create()
+var prefix = require("gulp-autoprefixer");
+var sourcemaps = require("gulp-sourcemaps");
+var del = require("del");
+var browserSync = require("browser-sync").create();
 
-gulp.task('browserSync', function() {
-  browserSync.init({
-    server: {
-      baseDir: 'dist'
-    }
-  })
-})
+var paths = {
+  styles: {
+    src: "src/sass/**/*.scss",
+    dest: "docs/styles"
+  },
+  pug: {
+    src: "src/pug/*.pug",
+    watch: "src/pug/**/*.pug",
+    dest: "docs"
+  },
+  scripts: {
+    src: "src/js/**/*.js",
+    dest: "docs/scripts"
+  },
+  images: {
+    src: ["src/img/**/*.jpg", "src/img/**/*.JPG", "src/img/**/*.png", "src/img/**/*.ico", "src/img/**/*.json"],
+    dest: "docs/images"
+  },
+  fonts: {
+    src: "src/fonts/**/*",
+    dest: "docs/fonts"
+  }
+}
 
-gulp.task('html', function() {
-  gulp.src('./src/*.html')
-    .pipe(gulp.dest('./dist'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-})
+var sassOptions = {
+  outputStyle: "expanded"
+};
+
+var prefixerOptions = {
+  browsers: ['last 2 versions']
+};
+
+gulp.task('clean', function() {
+  return del(['docs']);
+});
 
 gulp.task('pug', function() {
-  return gulp.src('./src/pug/*.pug')
+  var stream = gulp.src(paths.pug.src)
     .pipe(pug({
       pretty: true
     }))
-    .pipe(gulp.dest('./dist'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-})
+    .pipe(gulp.dest(paths.pug.dest));
+  return stream;
+});
 
-gulp.task('fonts', function() {
-  return gulp.src('./src/fonts/*')
-    .pipe(gulp.dest('./dist/fonts'))
-})
+gulp.task('styles', function() {
+  var stream = gulp.src(paths.styles.src)
+    .pipe(sourcemaps.init())
+    .pipe(sass(sassOptions).on("error", sass.logError))
+    .pipe(prefix(prefixerOptions))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.styles.dest));
+  return stream;
+});
 
 gulp.task('scripts', function() {
-  return gulp.src('./src/js/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest('./dist/js'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-})
-
-gulp.task('css', function() {
-  return gulp.src(['./src/css/*.css', './src/sass/**/*.scss'])
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(concat('styles.css'))
-    .pipe(cleanCSS())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-})
+  var stream = gulp.src(paths.scripts.src)
+    .pipe(gulp.dest(paths.scripts.dest));
+  return stream;
+});
 
 gulp.task('images', function() {
-  gulp.src('./src/img/*')
-    .pipe(gulp.dest('./dist/img'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-})
+  var stream = gulp.src(paths.images.src)
+    .pipe(gulp.dest(paths.images.dest));
+  return stream;
+});
 
-gulp.task('watch', ['browserSync', 'build'], function() {
-  gulp.watch('./src/pug/**/*.pug', ['pug'])
-  gulp.watch('./src/js/**/*.js', ['scripts'])
-  gulp.watch(['./src/sass/**/*.scss','./src/css/*.css'], ['css'])
-  gulp.watch('./src/img/*', ['images'])
-  gulp.watch('./src/fonts/*', ['fonts'])
-})
+gulp.task('fonts', function() {
+  var stream = gulp.src(paths.fonts.src)
+    .pipe(gulp.dest(paths.fonts.dest));
+  return stream;
+});
 
-gulp.task('build', ['pug', 'css', 'scripts', 'images', 'fonts'])
+gulp.task('browser', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./docs"
+    }
+  });
 
-gulp.task('default', ['watch'])
+  gulp.watch(paths.pug.watch, { usePolling: true, interval: 250 }, gulp.parallel('pug'))
+    .on('change', browserSync.reload);
+
+  // watch and rebuild .js files
+  gulp.watch(paths.scripts.src, { usePolling: true, interval: 250 }, gulp.parallel('scripts'))
+    .on('change', browserSync.reload);
+ 
+  // watch and rebuild .css files
+  gulp.watch(paths.styles.src, { usePolling: true, interval: 250 }, gulp.parallel('styles'))
+    .on('change', browserSync.reload);
+ 
+  // Reload when html changes
+  gulp.watch(paths.images.src, { usePolling: true, interval: 250 }, gulp.parallel('images'))
+    .on('change', browserSync.reload);
+});
+
+gulp.task('serve', gulp.series('clean',
+  gulp.parallel(
+    'pug',
+    'fonts',
+    'styles',
+    'scripts',
+    'images'),
+  'browser'));
+
+gulp.task('default', gulp.series('serve'));

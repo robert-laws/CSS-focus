@@ -1,0 +1,172 @@
+
+<html>
+  <head>
+    <meta charset="utf=8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles/main.css" media="screen"/>
+    <title>Pseudo-Classes and Elements</title>
+  </head>
+  <body>
+    <header>
+            <h3>Learning CSS3 Development -  Pseudo-Classes and Elements
+            </h3>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/index.html" title="Introduction">Introduction</a>
+        </li>
+        <li><a href="/media.html" title="Media Queries">Media Queries</a>
+        </li>
+        <li><a href="/selectors.html" title="Selectors">Selectors</a>
+        </li>
+        <li><a class="active" href="/pseudo.html" title="Pseudo-Classes and Elements">Pseudo-Classes and Elements</a>
+        </li>
+        <li><a href="/fonts.html" title="Web Fonts">Web Fonts</a>
+        </li>
+        <li><a href="/text.html" title="Text Effects">Text Effects</a>
+        </li>
+        <li><a href="/basic.html" title="Basic Layout">Basic Layout</a>
+        </li>
+        <li><a href="/background.html" title="Background Images">Background Images</a>
+        </li>
+        <li><a href="/border.html" title="Border and Box Effects">Border and Box Effects</a>
+        </li>
+        <li><a href="/color.html" title="Color and Opacity">Color and Opacity</a>
+        </li>
+        <li><a href="/gradients.html" title="Gradients">Gradients</a>
+        </li>
+        <li><a href="/two.html" title="2D Transformations">2D Transformations</a>
+        </li>
+        <li><a href="/three.html" title="3D Transformations">3D Transformations</a>
+        </li>
+        <li><a href="/transitions.html" title="Transititons and Animations">Transititons and Animations</a>
+        </li>
+        <li><a href="/flexbox.html" title="Flexbox Layout">Flexbox Layout</a>
+        </li>
+        <li><a href="/values.html" title="Values and Sizing">Values and Sizing</a>
+        </li>
+        <li><a href="/grid.html" title="Grid Layout">Grid Layout</a>
+        </li>
+        <li><a href="/blend.html" title="Blend Modes, Filters, and Masking">Blend Modes, Filters, and Masking</a>
+        </li>
+        <li><a href="/future.html" title="Future Steps">Future Steps</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="main">
+      <h1>Pseudo-Classes and Pseudo-Elements</h1>
+      <h2>Foundation Concepts - CSS2</h2>
+      <p>Pseudo-classes provide access to an element's state. Illustrated best with links and the<code>:hover :visited :active</code>states.</p>
+      <p>Pseudo-elements, on the other hand, provide access to an elements sub-parts, which can include portions of text nodes, for example with<code>::first-line ::first-letter</code>.</p>
+      <p>The major advantage of pseudo-classes and pseudo-elements is that they provide ways to hook-up styles without having to add classes without clear symantic value to the markup. Also, if changes are made such as adding more elements to the HTML, additional class names don't need to be added in order for the styling to take effect as desired. The first type considered is <a href="#example">CSS3 Structural Pseudo-Classes</a> after that is more.</p>
+      <h2 class="example" id="example">CSS3 Structural Pseudo-Classes and Pseudo-Elements</h2>
+      <article>
+        <h5>Example Content</h5>
+        <div class="pseudo">
+          <p>1 - Lorem ipsum dolor sit amet.</p>
+          <p>
+             2 - Laudantium minima<span>doloremque eligendi</span> aliquam omnis et culpa.</p>
+          <p>3 - Dolorum eveniet debitis assumenda! </p>
+          <p>4 - Aut perferendis aliquam ut iusto doloremque.</p>
+          <p>5 - Commodi at vel dolores recusandae autem.</p>
+          <p>6 - Minus odio quas consequuntur nobis autem.</p>
+          <p></p>
+        </div>
+      </article>
+      <h4>Example HTML Code</h4>
+            <pre><span>HTML</span>
+&lt;div&gt;
+  &lt;p&gt;1 - Lorem ipsum dolor sit amet.&lt;/p&gt;
+  &lt;p&gt;2 - Laudantium minima &lt;span&gt;doloremque eligendi&lt;/span&gt; aliquam omnis et culpa.&lt;/p&gt;
+  &lt;p&gt;3 - Dolorum eveniet debitis assumenda!&lt;/p&gt;
+  &lt;p&gt;4 - Aut perferendis aliquam ut iusto doloremque.&lt;/p&gt;
+  &lt;p&gt;5 - Commodi at vel dolores recusandae autem.&lt;/p&gt;
+  &lt;p&gt;6 - Minus odio quas consequuntur nobis autem.&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;</pre>
+      <h4>:First-Child - Pseudo-class (CSS2)</h4>
+            <pre><span>CSS</span>
+div p:first-child {
+  color: red;
+}</pre>
+      <h4>:nth-*(n) Pseudo-class (CSS3)</h4>
+            <pre><span>CSS</span>
+div p:nth-child(2n + 1) {
+  font-style: italic
+}</pre>
+      <h4>:nth-child(even)</h4>
+            <pre><span>CSS</span>
+div p:nth-child(even) {
+  font-size: 1.5em
+}</pre>
+      <h4>:nth-of-type(n)</h4>
+            <pre><span>CSS</span>
+div p:nth-of-type(3n) {
+  background-color: yellow;
+}</pre>
+      <h4>:nth-of-last-child(n)</h4>
+            <pre><span>CSS</span>
+div p:nth-last-child(-n + 2) {
+  color: green;
+}</pre>
+      <h4>:first-child</h4>
+            <pre><span>CSS</span>
+div:first-child {
+  text-decoration: underline;
+}</pre>
+      <h4>:last-child</h4>
+            <pre><span>CSS</span>
+div:last-child {
+  padding-left: 20px;
+}</pre>
+      <h4>:first-of-type</h4>
+            <pre><span>CSS</span>
+div p:first-of-type {
+  border: 1px solid #AAA;
+}</pre>
+      <h4>:last-of-type</h4>
+            <pre><span>CSS</span>
+div p:last-of-type {
+  border: 1px solid #F00;
+}</pre>
+      <h4>:only-child AND :only-type</h4>
+            <pre><span>CSS</span>
+div span:only-of-type {
+  color: blue;
+}</pre>
+      <h4>:target</h4>
+            <pre><span>CSS</span>
+.example:target {
+  color: green;
+}</pre>
+      <h4>:empty</h4>
+            <pre><span>CSS</span>
+p:empty {
+  background-color: #F09;
+}</pre>
+      <h4>:not</h4>
+            <pre><span>CSS</span>
+div:not(p) {
+  background-color: crimson;
+}</pre>
+      <h4>::first-letter AND ::first-line</h4>
+            <pre><span>CSS</span>
+div p::first-letter {
+  font-size: 2em;
+}</pre>
+      <h4>::selection</h4>
+            <pre><span>CSS</span>
+div p::selection {
+  background-color: #1A1;
+  color: #FFF;
+}</pre>
+      <h4>::after AND ::before</h4>
+            <pre><span>CSS</span>
+div p::after {
+  content: content: ' →';
+}</pre>
+    </section>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

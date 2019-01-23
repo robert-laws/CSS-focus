@@ -1,0 +1,145 @@
+
+<html>
+  <head>
+    <meta charset="utf=8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles/main.css" media="screen"/>
+    <title>Basic Layout</title>
+  </head>
+  <body>
+    <header>
+            <h3>Learning CSS3 Development -  Basic Layout
+            </h3>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/index.html" title="Introduction">Introduction</a>
+        </li>
+        <li><a href="/media.html" title="Media Queries">Media Queries</a>
+        </li>
+        <li><a href="/selectors.html" title="Selectors">Selectors</a>
+        </li>
+        <li><a href="/pseudo.html" title="Pseudo-Classes and Elements">Pseudo-Classes and Elements</a>
+        </li>
+        <li><a href="/fonts.html" title="Web Fonts">Web Fonts</a>
+        </li>
+        <li><a href="/text.html" title="Text Effects">Text Effects</a>
+        </li>
+        <li><a class="active" href="/basic.html" title="Basic Layout">Basic Layout</a>
+        </li>
+        <li><a href="/background.html" title="Background Images">Background Images</a>
+        </li>
+        <li><a href="/border.html" title="Border and Box Effects">Border and Box Effects</a>
+        </li>
+        <li><a href="/color.html" title="Color and Opacity">Color and Opacity</a>
+        </li>
+        <li><a href="/gradients.html" title="Gradients">Gradients</a>
+        </li>
+        <li><a href="/two.html" title="2D Transformations">2D Transformations</a>
+        </li>
+        <li><a href="/three.html" title="3D Transformations">3D Transformations</a>
+        </li>
+        <li><a href="/transitions.html" title="Transititons and Animations">Transititons and Animations</a>
+        </li>
+        <li><a href="/flexbox.html" title="Flexbox Layout">Flexbox Layout</a>
+        </li>
+        <li><a href="/values.html" title="Values and Sizing">Values and Sizing</a>
+        </li>
+        <li><a href="/grid.html" title="Grid Layout">Grid Layout</a>
+        </li>
+        <li><a href="/blend.html" title="Blend Modes, Filters, and Masking">Blend Modes, Filters, and Masking</a>
+        </li>
+        <li><a href="/future.html" title="Future Steps">Future Steps</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="main">
+      <h1>Multiple Columns</h1>
+      <h2>Column Layout Methods</h2>
+      <p>The text-shadow property will apply a shadow effect to text, giving the user a sense of 3 dimensionality.</p>
+      <h3>Column Count</h3>
+            <pre><span>CSS</span>
+element {
+  column-count: columns;
+}</pre>
+      <p>Application of a multi-column layout with the column-count property</p>
+            <pre><span>CSS</span>
+p {
+  column-count: 2
+}</pre>
+            <hr/>
+            <h3>Example - Column Count</h3>
+            <article>
+              <h5>Sample Content</h5>
+              <div class="column-count">
+                <p class="column-count-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam? Consequuntur officia eaque quidem nemo excepturi, magnam nobis rem sequi quas nostrum possimus sunt labore in veniam ipsum corporis architecto culpa ullam nisi dolore itaque aliquid molestias? Perspiciatis, totam! Iure, quis consequuntur distinctio hic ut incidunt vel repellendus obcaecati ea illum quasi, ab commodi, quidem laudantium harum quaerat ex veritatis totam nam. Reprehenderit, a sint natus accusamus modi nemo laborum ad ratione delectus! Quaerat, commodi, enim voluptatum ipsa accusantium ab quo excepturi error praesentium soluta animi consectetur cumque nobis sequi temporibus autem itaque vel velit molestiae aliquam illo? Suscipit, eum.</p>
+              </div>
+            </article>
+            <pre><span>CSS</span>
+p {
+  column-width: 200px;
+}</pre>
+      <hr/>
+      <h3>Column-Width Property</h3>
+            <pre><span>CSS</span>
+element {
+  column-width: length;
+}</pre>
+            <hr/>
+            <h3>Example - Column Width</h3>
+            <article>
+              <h5>Sample Content</h5>
+              <div class="column-width">
+                <p class="column-width-200">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam? Consequuntur officia eaque quidem nemo excepturi, magnam nobis rem sequi quas nostrum possimus sunt labore in veniam ipsum corporis architecto culpa ullam nisi dolore itaque aliquid molestias? Perspiciatis, totam! Iure, quis consequuntur distinctio hic ut incidunt vel repellendus obcaecati ea illum quasi, ab commodi, quidem laudantium harum quaerat ex veritatis totam nam. Reprehenderit, a sint natus accusamus modi nemo laborum ad ratione delectus! Quaerat, commodi, enim voluptatum ipsa accusantium ab quo excepturi error praesentium soluta animi consectetur cumque nobis sequi temporibus autem itaque vel velit molestiae aliquam illo? Suscipit, eum.</p>
+              </div>
+            </article>
+            <pre><span>CSS</span>
+p {
+  column-width: 200px;
+}</pre>
+            <hr/>
+            <h3>Example - Column Width &amp; Width</h3>
+            <article>
+              <h5>Sample Content</h5>
+              <div class="column-width">
+                <p class="column-width-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam? Consequuntur officia eaque quidem nemo excepturi, magnam nobis rem sequi quas nostrum possimus sunt labore in veniam ipsum corporis architecto culpa ullam nisi dolore itaque aliquid molestias? Perspiciatis, totam! Iure, quis consequuntur distinctio hic ut incidunt vel repellendus obcaecati ea illum quasi, ab commodi, quidem laudantium harum quaerat ex veritatis totam nam. Reprehenderit, a sint natus accusamus modi nemo laborum ad ratione delectus! Quaerat, commodi, enim voluptatum ipsa accusantium ab quo excepturi error praesentium soluta animi consectetur cumque nobis sequi temporibus autem itaque vel velit molestiae aliquam illo? Suscipit, eum.</p>
+              </div>
+            </article>
+            <pre><span>CSS</span>
+p {
+  column-width: 200px;
+  width: 820px
+}</pre>
+            <hr/>
+            <h3>Example - Combining Column Width &amp; Column Count</h3>
+            <article>
+              <h5>Sample Content</h5>
+              <div class="column-columns">
+                <p class="column-width-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, ullam? Consequuntur officia eaque quidem nemo excepturi, magnam nobis rem sequi quas nostrum possimus sunt labore in veniam ipsum corporis architecto culpa ullam nisi dolore itaque aliquid molestias? Perspiciatis, totam! Iure, quis consequuntur distinctio hic ut incidunt vel repellendus obcaecati ea illum quasi, ab commodi, quidem laudantium harum quaerat ex veritatis totam nam. Reprehenderit, a sint natus accusamus modi nemo laborum ad ratione delectus! Quaerat, commodi, enim voluptatum ipsa accusantium ab quo excepturi error praesentium soluta animi consectetur cumque nobis sequi temporibus autem itaque vel velit molestiae aliquam illo? Suscipit, eum.</p>
+              </div>
+            </article>
+            <pre><span>CSS</span>
+p {
+  columns: 100px 6;
+}</pre>
+            <hr/>
+            <h3>Example - Column Gaps and Rules</h3>
+            <article>
+              <h5>Sample Content</h5>
+              <div class="column-gap">
+                <p class="column-gap-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde illum eaque sint exercitationem perspiciatis iusto ducimus omnis provident ab odit est sequi magnam illo repellendus cumque, neque maiores quod autem repellat laborum blanditiis, ratione quo! Numquam aliquam quisquam iusto praesentium! Reprehenderit, a sint natus accusamus modi nemo laborum ad ratione delectus! Quaerat, commodi, enim voluptatum ipsa accusantium ab quo excepturi.</p>
+              </div>
+            </article>
+            <pre><span>CSS</span>
+p {
+  column-count: 3
+  column-gap: 2em;
+  column-rule-width: 0.3em;
+  column-rule-style: double;
+  column-rule-color: green;
+}</pre>
+    </section>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
